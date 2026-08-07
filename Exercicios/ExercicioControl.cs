@@ -58,15 +58,20 @@ namespace Exercicios
         public void Menu()
         {
             Console.WriteLine("\nEscolha uma das opções abaixo: \n" +
-                              "0. Sair\n"                           +
-                              "1. Soma \n"                          +
-                              "2. Subtração \n"                     +
-                              "3. Divisão \n"                       +
-                              "4. Multiplicação\n"                  +
-                              "5. Potência\n"                       +
-                              "6. Potência com Parâmetros\n"        +
-                              "7. Raiz\n"                           +
-                              "8. Raiz com Parâmetros\n");
+                              "0. Sair\n" +
+                              "1. Soma \n" +
+                              "2. Subtração \n" +
+                              "3. Divisão \n" +
+                              "4. Multiplicação\n" +
+                              "5. Potência\n" +
+                              "6. Potência com Parâmetros\n" +
+                              "7. Raiz\n" +
+                              "8. Raiz com Parâmetros\n" +
+                              "9. Exercicios01\n" +
+                              "10. Exercicio02\n"+
+                              "11. Exercicio03\n"+
+                              "12. Excercico04\n"+
+                              "13. Exercicio05\n");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }//fim
@@ -137,6 +142,37 @@ namespace Exercicios
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não é valida!");
+                        break;
+                    case 9:
+                        Console.WriteLine("Infome o ano: ");
+                        int ano = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar o resultado
+                        Console.WriteLine(this.modelo.Exer01(ano));
+                        break;
+                    case 10:
+                        Console.WriteLine("Informe um número: ");
+                        int cem = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar Resultado
+                        Console.WriteLine(this.modelo.Exer02(cem));
+                        break;
+                    case 11:
+                        Console.WriteLine("Informe sua idade: ");
+                        int idade = Convert.ToInt32(Console.ReadLine());
+                        //Mostrar resultado
+                        Console.WriteLine(this.modelo.Exer03(idade));
+                        break;
+                    case 12:
+                        Console.WriteLine("Informe o Primeiro número: ");
+                        int d1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o Segundo número: ");
+                        int d2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe o Terceiro número: ");
+                        int d3 = Convert.ToInt32(Console.ReadLine());
+                        //Mostar Resultado
+                        Console.WriteLine(this.modelo.Exer04(d1, d2, d3));
+                        break;
+                    case 13:
+                        Console.WriteLine(this.modelo.Exer05());
                         break;
                 }//fim escolha
             } while (GetOpcao() != 0);//fim do do...while

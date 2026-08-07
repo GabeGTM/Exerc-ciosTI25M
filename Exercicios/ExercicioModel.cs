@@ -147,7 +147,83 @@ namespace Exercicios
             return Math.Sqrt(GetNum4());
         }//fim da raiz Num4
 
+        public string Exer01(int ano)
+        {
+            if(ano % 4 == 0)
+            {
+                return ano + " É Bissexto;";  
+            }
+            else
+            {
+                return ano + " Não é biSSexto";
+            }
+        }//fim Exercicio01
 
+        public string Exer02(int num1)
+        {
+            if (num1 >= 100 && num1 <= 200)
+            {
+                return num1 + " Está entre 100 e 200";
+            }
+            else
+            {
+                return num1 + " Não está entre 100 e 200";
+            }
+        }//fim Execicio02
+
+        public string Exer03(int num1)
+        {
+            if (num1 >= 18)
+            {
+                return " Você pode votar";
+            }
+            else
+            {
+                return " Você não pode votar";
+            }
+        }//fim Exercicio03
+
+        public string Exer04(int num1, int num2, int num3)
+        {
+            if ((num3 >= num1) && (num3 <= num2))
+            {
+                return "O número " + num3 + " está dentro do Intervalo";
+            }
+            else
+            {
+                return "O número " + num3 + " não está dentro do intervalo";
+            }
+        }//fim exercicio04
+
+        public string Exer05()
+        {
+            int num1, num2;
+            bool achou = false;
+
+            Console.WriteLine("Informe o número que deseja procurar: ");
+            num1 = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write((i + 1) + "º Numero: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+            
+            if(num1 == num2)
+                {
+                    achou = true;
+                }  
+            }//fim for
+
+            if (achou)
+            {
+                return ("" + num1 + "" + " Está dentro dos valores");
+            }
+            else
+            {
+                return ("" + num1 + "" + " Não está dentro do valores");
+            }//fim if
+            
+        }//fim Exercicio05
 
     }//fim da classe
 }//fim do projeto
