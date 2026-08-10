@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,11 +68,26 @@ namespace Exercicios
                               "6. Potência com Parâmetros\n" +
                               "7. Raiz\n" +
                               "8. Raiz com Parâmetros\n" +
-                              "9. Exercicios01\n" +
-                              "10. Exercicio02\n"+
-                              "11. Exercicio03\n"+
-                              "12. Excercico04\n"+
-                              "13. Exercicio05\n");
+                              "9. Exercicio01\n" +
+                              "10. Exercicio02\n" +
+                              "11. Exercicio03\n" +
+                              "12. Excercico04\n" +
+                              "13. Exercicio05\n" +
+                              "14. Exercicio06\n" +
+                              "15. Exercicio07\n" +
+                              "16. Exercicio08\n" +
+                              "17. Exercicio09\n" +
+                              "18. Exercicio10\n" +
+                              "19. Exercicio11\n" +
+                              "20. Exercicio12\n" +
+                              "21. Exercicio13\n" +
+                              "22. Excercico14\n" +
+                              "23. Exercicio15\n" +
+                              "24. Exercicio16\n" +
+                              "25. Exercicio17\n" +
+                              "26. Exercicio18\n" +
+                              "27. Exercicio19\n" +
+                              "28. Exercicio20\n");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }//fim
@@ -173,6 +189,54 @@ namespace Exercicios
                         break;
                     case 13:
                         Console.WriteLine(this.modelo.Exer05());
+                        break;
+                    case 14:
+                        Console.WriteLine(this.modelo.Exer06());
+                        break;
+                    case 15:
+                        Console.WriteLine(this.modelo.Exer07());
+                        break;
+                    case 16:
+                        Console.WriteLine("Crie Sua senha: ");
+                        int criar = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Informe sua senha:");
+                        int senha = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine(this.modelo.Exer08(senha, criar));
+                        break;
+                    case 17:
+                        Console.WriteLine("Digite um horário: ");
+                        num1 = Convert.ToDouble(Console.ReadLine());
+                        Console.WriteLine("Digite outro horário: ");
+                        num2 = Convert.ToDouble(Console.ReadLine());
+                        //Resultado
+                        Console.WriteLine(this.modelo.Exer09(num1, num2));
+                        break;
+                    case 18:
+                        Console.WriteLine("Digite o primeiro número: ");
+                        int h5 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o segundo número: ");
+                        int h6= Convert.ToInt32(Console.ReadLine());
+                        //Resultado
+                        Console.WriteLine(this.modelo.Exer10(h5, h6));
+                        break;
+                    case 19:
+                        Console.WriteLine("Digite o primeiro número: ");
+                        int l1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o segundo número: ");
+                        int l2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o terceiro número: ");
+                        int l3 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o quarto número: ");
+                        int l4 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Digite o quinto número: ");
+                        int l5 = Convert.ToInt32(Console.ReadLine());
+                        //resultado
+                        Console.WriteLine(this.modelo.Exer11(l1, l2, l3, l4, l5));
+                        break;
+                    case 20:
+                        Console.WriteLine(this.modelo.Exer12());
                         break;
                 }//fim escolha
             } while (GetOpcao() != 0);//fim do do...while

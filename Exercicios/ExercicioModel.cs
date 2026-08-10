@@ -222,8 +222,179 @@ namespace Exercicios
             {
                 return ("" + num1 + "" + " Não está dentro do valores");
             }//fim if
-            
+
         }//fim Exercicio05
 
+        public string Exer06()
+        {
+            int num1, num2, num3;
+
+
+            Console.WriteLine("Informe o Primeiro lado: ");
+            num1 = Convert.ToInt32((Console.ReadLine()));
+
+            while (num1 <= 0)
+            {
+
+                Console.WriteLine("Não existe lado negativo ou zero, digite novamente: ");
+                num1= Convert.ToInt32(Console.ReadLine());
+            }//fim while 
+
+            Console.WriteLine("Informe o Segundo lado: ");
+            num2 = Convert.ToInt32((Console.ReadLine()));
+
+            while (num2 <= 0)
+            {
+                Console.WriteLine("Não existe lado negativo ou zero, digite novamente: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+            }//fim while 
+
+            Console.WriteLine("Informe o Terceiro lado: ");
+            num3 = Convert.ToInt32((Console.ReadLine()));
+
+            while (num3 <= 0)
+            {
+                Console.WriteLine("Não existe lado negativo ou zero, digite novamente: ");
+                num3 = Convert.ToInt32(Console.ReadLine());
+            }//fim while 
+
+            if ((num1 == num2) && (num1 == num3))
+                {
+                    return "Triângulo Equilátero";
+                }
+            else
+            {
+                if ((num1 != num2) && (num1 != num3) && (num2 != num3))
+                {
+                    return "Triângulo Escaleno";
+                }
+                else
+                {
+                    return "Triângulo Isósceles";
+                }//fim if else
+            }//fim if else
+        }//fim Exercicio06 
+
+        public string Exer07()
+        {
+            int num;
+
+            Console.WriteLine("Informe um número (1 a 7): ");
+            num = Convert.ToInt32(Console.ReadLine());
+
+            while ((num < 1) || (num > 7))
+            {
+                Console.WriteLine("Informe um número válido (1 a 7): ");
+                num = Convert.ToInt32(Console.ReadLine());
+            }
+
+            //Verificação dos dias
+            if (num == 1)
+            {
+                return "Domingo";
+            }
+            else
+            {
+                if (num == 2)
+                {
+                    return "Segunda";
+                }
+                else
+                {
+                    if (num == 3)
+                    {
+                        return "Terça";
+                    }
+                    else
+                    {
+                        if (num == 4)
+                        {
+                            return "Quarta";
+                        }
+                        else
+                        {
+                            if (num == 5)
+                            {
+                                return "Quinta";
+                            }
+                            else
+                            {
+                                if (num == 6)
+                                {
+                                    return "Sexta";
+                                }
+                                else
+                                {
+                                    return "Sabado";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }//fim Exercicio07
+
+        public String Exer08(int senha, int criar)
+        {
+            if (senha == criar)
+            {
+                return "Acesso liberado, olá Gabriel";
+            }
+            else
+            {
+                return "Acesso negado";
+            }//fim se      
+        }//fim Exercicio08
+
+        public string Exer09(double num1, double num2)
+        {
+            if (num1 > num2)
+            {
+                return (num1 + " é maior que " + num2);
+            }
+            else
+            {
+                return (num1 + " é menor que " + num2);
+            }
+        }//fim Exercicio09
+
+        public string Exer10(int num1, int num2)
+        {
+            if (num1 > num2)
+            {
+                return num1 + " é maior que " + num2;
+            }
+            else
+            {
+                return num1 + " é menor que " + num2;
+            }//fim if
+        }//fim Exercicio10
+
+        public string Exer11(int n1, int n2, int n3, int n4, int n5)
+        {
+            int n6 = 0;
+            n6 = (n1 + n2 + n3 + n4 + n5) / 5;
+            return "A sua média é: " + n6;
+        }//fim Exercicio11
+
+        public string Exer12()
+        {
+            int n1;
+            int soma = 0;
+
+            Console.WriteLine("Escreva 0 primeiro número: ");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            soma = soma + n1;
+
+            while (soma < 100)
+            {
+                Console.WriteLine("Escreva outro número: ");
+                n1 = Convert.ToInt32(Console.ReadLine());
+                soma = soma + n1;
+            }//fim while
+                return "Você chegou em: " + soma;
+        }//fim Exercicio12
     }//fim da classe
 }//fim do projeto
+    
