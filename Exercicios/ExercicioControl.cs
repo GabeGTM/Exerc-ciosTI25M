@@ -87,7 +87,11 @@ namespace Exercicios
                               "25. Exercicio17\n" +
                               "26. Exercicio18\n" +
                               "27. Exercicio19\n" +
-                              "28. Exercicio20\n");
+                              "28. Exercicio20\n" +
+                              "29. Multiplo\n" +
+                              "30. Multiplo For\n" +
+                              "31. Palindromo\n" +
+                              "32. Par Impar");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }//fim
@@ -237,6 +241,33 @@ namespace Exercicios
                         break;
                     case 20:
                         Console.WriteLine(this.modelo.Exer12());
+                        break;
+                    case 29:
+                        Console.WriteLine("Informe um numero: ");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        //Mostar resultado da operação
+                        Console.WriteLine(this.modelo.multiplo(num));
+                        break;
+                    case 30:
+                        Console.WriteLine("Informe um numero: ");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        //Mostar resultado da operação
+                        Console.WriteLine(this.modelo.multiplo(num));
+                        break;
+                    case 31:
+                        Console.WriteLine("Informe um número: ");
+                        string palin = Console.ReadLine();
+                        if (this.modelo.EhPalindormo(palin) == false)
+                        {
+                            Console.WriteLine("Não é Palíndromo");
+                        }
+                        else
+                        {
+                            Console.WriteLine("É Palíndromo");
+                        }
+                        break;
+                    case 32:
+                        this.modelo.ContarParImpar();
                         break;
                 }//fim escolha
             } while (GetOpcao() != 0);//fim do do...while

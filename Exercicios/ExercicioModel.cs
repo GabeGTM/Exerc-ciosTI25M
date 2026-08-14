@@ -147,6 +147,75 @@ namespace Exercicios
             return Math.Sqrt(GetNum4());
         }//fim da raiz Num4
 
+        //Leia um número inteiro e retornar todos os múltiplos menores que 100
+        public string multiplo(int numero)
+        {
+            //contador
+            int i = 1; //Criando contador e definindo o ponto de partida
+            string resultado = "";
+            while(i < numero)
+            {
+                if(numero % i == 0)
+                {
+                    resultado += i + "\n";
+                }
+                //Rodar o meu contador
+                i++;
+            }//fim do while
+            return resultado;
+        }
+        public string multiploFor(int numero)
+        {
+            string resultado = "";
+            for (int i = 1;  i < 100; i++)
+            {
+                if (numero % i == 0)
+                {
+                    resultado += i + "\n";
+                }//fim if
+            }//fim do for
+            return resultado;
+        }//fim do metodo
+
+        public bool EhPalindromo(string palin)
+        {
+            int fim = palin.Length - 1;//Meço o tamanho de um conjunto de caracteres
+            int inicio = 0;
+
+            while (inicio < fim)
+            {
+                if (palin.Substring(inicio, 1) != palin.Substring(fim, 1))
+                {
+                    return false;
+                }
+                inicio++;
+                fim--;
+            }//fim do while
+            return true;
+        }//fim do método
+
+        public void ContarParImpar()
+        {
+            int contarPar = 0;
+            int contarImpar = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                Console.Write(i + 1 + "º número: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                //Comparações
+                if (num % 2 == 0)
+                {
+                    contarPar++;
+                }
+                else
+                {
+                    contarImpar++;
+                }
+            }//fim do for
+            Console.WriteLine("A quantidade de pares é: " + contarPar + "\nA quantidade de ímpares é: " + contarImpar);
+        }//fim do parImpar
+
         public string Exer01(int ano)
         {
             if(ano % 4 == 0)
@@ -395,6 +464,10 @@ namespace Exercicios
             }//fim while
                 return "Você chegou em: " + soma;
         }//fim Exercicio12
+
+
+
+
     }//fim da classe
 }//fim do projeto
     
