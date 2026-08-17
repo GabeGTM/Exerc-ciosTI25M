@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Net.Mail;
 using System.Security.AccessControl;
@@ -91,7 +92,12 @@ namespace Exercicios
                               "29. Multiplo\n" +
                               "30. Multiplo For\n" +
                               "31. Palindromo\n" +
-                              "32. Par Impar");
+                              "32. Par Impar\n"+
+                              "33. Repetição04\n"+
+                              "34. Repetição05\n" +
+                              "35. Repetição06\n"+
+                              "36. Repetição07\n"+
+                              "37. Repetição08\n");
             SetOpcao(Convert.ToInt32(Console.ReadLine()));
             Console.Clear();//Limpa o console
         }//fim
@@ -242,9 +248,113 @@ namespace Exercicios
                     case 20:
                         Console.WriteLine(this.modelo.Exer12());
                         break;
+                    case 21:
+                        int chances = 0;
+                        bool acessoLiberado = false;
+
+                        Console.WriteLine("Crie sua senha:");
+                        int Mcriar = Convert.ToInt32(Console.ReadLine());
+                        while (chances < 3 && !acessoLiberado)
+                        {
+                            Console.WriteLine($"Tentativa {chances + 1} de 3. Digite sua senha:");
+                            int Msenha = Convert.ToInt32(Console.ReadLine());
+                            string mostrar = this.modelo.Exer13(Msenha, Mcriar);
+
+                            if (mostrar == "Acesso liberado, olá magnata")
+                            {
+                                Console.WriteLine(mostrar);
+                                acessoLiberado = true;
+                            }
+                            else
+                            {
+                                chances++;
+                                if (chances < 3)
+                                {
+                                    Console.WriteLine("Senha incorreta! Tente novamente.");
+                                }
+                            }
+                        }
+
+                        if (!acessoLiberado)
+                        {
+                            Console.WriteLine("Acesso negado. Conta bloqueada!");
+                        }
+                        break;
+                    case 22:
+                        int c = 1;
+                        int maior, menor;
+
+                        Console.WriteLine("Digite o numero 1:");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        maior = num;
+                        menor = num;
+                        while (c < 10)
+                        {
+                            c = c + 1;
+
+                            Console.WriteLine($"Digite o numero {c}:");
+                            num = Convert.ToInt32(Console.ReadLine());
+
+                            if (num > maior)
+                            {
+                                maior = num;
+                            }
+
+                            if (num < menor)
+                            {
+                                menor = num;
+                            }
+                        }
+                        Console.WriteLine(this.modelo.Exer14(maior, menor));
+                        break;
+                    case 23:
+                        Console.WriteLine("Digite sua idade");
+                        idade = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.modelo.Exer15(idade));
+                        break;
+                    case 24:
+                        Console.Write("Digite seu peso: ");
+                        double peso = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("Digite sua altura: ");
+                        double altura = Convert.ToDouble(Console.ReadLine());
+                        //Resultado
+                        Console.WriteLine(this.modelo.Exer16(peso, altura));
+                        break;
+                    case 25:
+                        Console.WriteLine("Informe um numero:");
+                        int numTabuada = Convert.ToInt32(Console.ReadLine());
+                        //Resultado
+                        Console.WriteLine(this.modelo.Exer17(numTabuada));
+                        break;
+                    case 26:
+                        Console.WriteLine("Informe um valor:");
+                        num = Convert.ToInt32(Console.ReadLine());
+                        //Resultado
+                        Console.WriteLine(this.modelo.Exer18(num));
+                        break;
+                    case 27:
+                        Console.Write("Digite o primeiro número: ");
+                        double Pnumero = Convert.ToDouble(Console.ReadLine());
+
+                        Console.Write("Digite o segundo número: ");
+                        double Snumero = Convert.ToDouble(Console.ReadLine());
+
+                        Console.Write("Digite o terceiro número: ");
+                        double Tnumero = Convert.ToDouble(Console.ReadLine());
+                        //Resultado
+                        Console.WriteLine(this.modelo.Exer19(Pnumero, Snumero, Tnumero));
+                        break;
+                    case 28:
+
+                        Console.Write("Digite sua idade: ");
+                        idade = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine(
+                            this.modelo.Exer20(idade));
+                        break;
                     case 29:
                         Console.WriteLine("Informe um numero: ");
-                        int num = Convert.ToInt32(Console.ReadLine());
+                        num = Convert.ToInt32(Console.ReadLine());
                         //Mostar resultado da operação
                         Console.WriteLine(this.modelo.multiplo(num));
                         break;
@@ -257,7 +367,7 @@ namespace Exercicios
                     case 31:
                         Console.WriteLine("Informe um número: ");
                         string palin = Console.ReadLine();
-                        if (this.modelo.EhPalindormo(palin) == false)
+                        if (this.modelo.EhPalindromo(palin) == false)
                         {
                             Console.WriteLine("Não é Palíndromo");
                         }
@@ -268,6 +378,27 @@ namespace Exercicios
                         break;
                     case 32:
                         this.modelo.ContarParImpar();
+                        break;
+                    case 33:
+                        Console.WriteLine("Informe o número que quer contar: ");
+                        int contar = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine(this.modelo.rept4(contar));
+                        break;
+                    case 34:
+                        string resultado = this.modelo.rept5();
+                        Console.WriteLine(resultado);
+                        break;
+                    case 35:
+                        Console.WriteLine(this.modelo.rept6());
+                        break;
+                    case 36:
+                        this.modelo.rept7();
+                        break;
+                    case 37:
+                        Console.WriteLine("Informe o número: ");
+                        int n = Convert.ToInt32(Console.ReadLine());
+                        this.modelo.rept8(n);
                         break;
                 }//fim escolha
             } while (GetOpcao() != 0);//fim do do...while

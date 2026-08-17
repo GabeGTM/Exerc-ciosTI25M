@@ -465,8 +465,212 @@ namespace Exercicios
                 return "Você chegou em: " + soma;
         }//fim Exercicio12
 
+        public String Exer13(int senha, int criar)
+        {
+            if (senha.Equals(criar))
+            {
+                return "Acesso liberado, olá magnata";
+            }
+            else
+            {
+                return "Incorreto";
+            }//fim se
+        }//fim Exercicio13
+
+        public String Exer14(int maior, int menor)
+        {
+            if (maior > menor)
+            {
+                return maior + " é maior que " + menor;
+            }
+            else if (maior < menor)
+            {
+                return menor + " é menor que " + menor;
+            }
+            else
+            {
+                return "";
+            }//fim se
+        }//fim Exercicio14
 
 
+        public string Exer15(int idade)
+        {
+            if (idade < 0) return "Idade inválida";
+            if (idade <= 12) return "Criança";
+            if (idade <= 18) return "Jovem";
+            if (idade <= 60) return "Adulto";
+            return "Idoso";
+        }//Fim Exercicio15
+
+        public String Exer16(double peso, double altura)
+        {
+            if (altura <= 0)
+            {
+                return "Altura inválida";
+            }
+
+            double imc = peso / (altura * altura);
+
+            if (imc < 18.5)
+            {
+                return "Abaixo do peso";
+            }
+            else if (imc < 25)
+            {
+                return "Peso normal";
+            }
+            else if (imc < 30)
+            {
+                return "Sobrepeso";
+            }
+            else
+            {
+                return "Obesidade";
+            }
+        }//fim Exercicio16
+
+
+        public string Exer17(double numero)
+        {
+            if (numero > 0) return "Positivo";
+            if (numero < 0) return "Negativo";
+            return "Zero";
+        }//fim Exercicio17
+
+
+        public string Exer18(int numero)
+        {
+            if (numero % 2 == 0)
+            {
+                return "par";
+            }
+            else
+            {
+                return "impar";
+            }
+
+        }//fim Exercicio18
+
+        public string Exer19(double n1, double n2, double n3)
+        {
+            double maior = Math.Max(n1, Math.Max(n2, n3));
+            double menor = Math.Min(n1, Math.Min(n2, n3));
+            double soma = n1 + n2 + n3;
+            double media = soma / 3;
+            double potencia = Math.Pow(n1, n2);
+
+            return "Maior: " + maior +
+                   "\nMenor: " + menor +
+                   "\nSoma: " + soma +
+                   "\nMédia: " + media +
+                   "\nPotência: " + potencia;
+        }//fim Exercicio19
+
+
+        public string Exer20(int idade)
+        {
+            if (idade < 6)
+            {
+                return "Tarifa: R$ 0,00";
+            }
+            else if (idade <= 17)
+            {
+                return "Tarifa: R$ 800";
+            }
+            else if (idade >= 60)
+            {
+                return "Tarifa: R$ 6000";
+            }
+            else
+            {
+                return "Tarifa: R$ 5,00";
+            }
+        }//fim Exercicio20
+
+        public string rept4(int contar)
+        {
+            int total = contar.ToString().Length;
+            return ("A quatidade é: " + total);
+        }//fim Exercicio de repetição04
+
+        public string rept5()
+        {
+            string senhaCorreta = "123";
+            int Tentativas = 3;
+
+            for (int tentativa = 1; tentativa <= Tentativas; tentativa++)
+            {
+                Console.Write("Digite sua senha: ");
+                string senha = Console.ReadLine();
+
+                if (senha == senhaCorreta)
+                {
+                    return "Acesso permitido";
+                }
+
+                if (tentativa < Tentativas)
+                {
+                    Console.WriteLine("- Senha Incorreta - Tente novamente: ");
+                }
+            }
+
+            return "Acesso bloqueado";
+        }//fim Exercicio de repetição05
+
+        public string rept6()
+        {
+            int maior = 0;
+            int menor = 0;
+            int contar = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write(i + 1 + "º idade: ");
+                int num = Convert.ToInt32(Console.ReadLine());
+                //Comparações
+                if (num >= 18)
+                {
+                    maior = maior + num;
+                    contar++;
+                }
+                else
+                {
+                    menor = num;
+                    menor++;
+                }
+            }//fim do for
+            if (maior == 0)
+            {
+                return "Não foram digitadas idades maiores ou iguais a 18";
+            }
+            else
+            {
+                return ("O resultado da média é: " + maior / contar);
+            }
+        }//fim Exercicio de repetição06
+
+        public void rept7()
+        {
+            int num1;
+            do
+            {
+                Console.WriteLine("Digite um número: ");
+                num1 = Convert.ToInt32(Console.ReadLine());
+
+            } while (num1 > 0);
+
+            Console.WriteLine("Fim.");
+        }//fim Exercicio de repetição07
+
+        public void rept8(int n)
+        {
+            for (int i = 2;i <= n ;i+=2)
+            {
+                int quadrado = i * i;
+                Console.WriteLine($"{i}² {quadrado}");
+            }
+         }
 
     }//fim da classe
 }//fim do projeto
